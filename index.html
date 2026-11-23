@@ -15,6 +15,8 @@
   .composite { border: 1px solid rgba(128,128,128,.4); border-radius: 12px; padding: 20px; text-align: center; margin-bottom: 20px; }
   .composite .num { font-size: 3rem; font-weight: 700; line-height: 1.1; }
   .composite .label { font-size: .9rem; opacity: .75; }
+  .chart { border: 1px solid rgba(128,128,128,.4); border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; }
+  .chart h2 { font-size: 1rem; margin: 0 0 8px; }
   .cards { display: grid; grid-template-columns: 1fr; gap: 12px; }
   @media (min-width: 640px) { .cards { grid-template-columns: 1fr 1fr; } }
   .card { border: 1px solid rgba(128,128,128,.4); border-radius: 12px; padding: 16px; }
@@ -32,12 +34,17 @@
 <body>
 <main>
   <h1>株クラセンチメント指数（簡易版）</h1>
-  <div class="sub">Xの株クラ界隈のポスト傾向から、投資家のセンチメント（恐怖・荒れ具合）を読む温度計です。毎朝更新。</div>
+  <div class="sub">Xの株クラ界隈のポスト傾向から、投資家のセンチメント（恐怖・荒れ具合）を読む温度計です。1日3回（9時・13時・18時ごろ）更新。</div>
 
   <div class="composite">
     <div class="label">総合指数（2026年11月23日）</div>
     <div class="num">100.0</div>
     <div class="label">記録開始日＝100として指数化。サンプル合計 1,319件</div>
+  </div>
+
+  <div class="chart">
+    <h2>総合指数の推移（直近30日）</h2>
+    <p style="font-size:.9rem;opacity:.75">推移グラフはデータ蓄積中です（現在1日分）。日が進むにつれて、ここに折れ線が伸びていきます。</p>
   </div>
 
   <div class="cards">
