@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>株クラセンチメント指数（簡易版）</title>
+<meta name="description" content="Xの株クラ界隈のポスト傾向から投資家センチメントを読む簡易サンプリング指数。リーマンおじさん／説教おじさん／喧嘩／他界隈からの批判の4カテゴリを毎日集計。">
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; line-height: 1.7; padding: 24px 16px 48px; }
+  main { max-width: 760px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; }
+  .sub { opacity: .75; font-size: .9rem; margin-bottom: 24px; }
+  .composite { border: 1px solid rgba(128,128,128,.4); border-radius: 12px; padding: 20px; text-align: center; margin-bottom: 20px; }
+  .composite .num { font-size: 3rem; font-weight: 700; line-height: 1.1; }
+  .composite .label { font-size: .9rem; opacity: .75; }
+  .cards { display: grid; grid-template-columns: 1fr; gap: 12px; }
+  @media (min-width: 640px) { .cards { grid-template-columns: 1fr 1fr; } }
+  .card { border: 1px solid rgba(128,128,128,.4); border-radius: 12px; padding: 16px; }
+  .card h2 { font-size: 1.05rem; margin: 0 0 2px; }
+  .card .count { font-size: 1.8rem; font-weight: 700; }
+  .card .unit { font-size: .85rem; opacity: .75; }
+  .bar { height: 8px; border-radius: 4px; background: rgba(128,128,128,.25); margin: 10px 0; overflow: hidden; }
+  .bar > div { height: 100%; background: #d97706; }
+  .card p { font-size: .9rem; margin: 8px 0 0; }
+  section.note { margin-top: 28px; font-size: .88rem; }
+  section.note h2 { font-size: 1rem; }
+  footer { margin-top: 32px; font-size: .8rem; opacity: .7; }
+</style>
+</head>
+<body>
+<main>
+  <h1>株クラセンチメント指数（簡易版）</h1>
+  <div class="sub">Xの株クラ界隈のポスト傾向から、投資家のセンチメント（恐怖・荒れ具合）を読む温度計です。毎朝更新。</div>
+
+  <div class="composite">
+    <div class="label">総合指数（2026年11月23日）</div>
+    <div class="num">100.0</div>
+    <div class="label">記録開始日＝100として指数化。サンプル合計 1,319件</div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h2>リーマンおじさん指数</h2>
+      <div><span class="count">1,206</span> <span class="unit">件（推定）</span></div>
+      <div class="bar"><div style="width:100%"></div></div>
+      <p>暴落のたびにリーマンショックを引き合いに出すポスト。恐怖の温度計。</p>
+      <p><strong>今日の傾向：</strong>AI関連株の下げを「リーマンショック並み」と表現する声がある一方で、「下落率はまだリーマン級ではない。騒ぎすぎ」という冷静な見方も目立ちます。リーマン期の値動きを振り返って今後の下げに備える趣旨のポストも見られます。</p>
+    </div>
+    <div class="card">
+      <h2>説教おじさん指数</h2>
+      <div><span class="count">109</span> <span class="unit">件（推定）</span></div>
+      <div class="bar"><div style="width:9%"></div></div>
+      <p>下落局面で「だから言った」と説教を始めるポスト。</p>
+      <p><strong>今日の傾向：</strong>「だから言った」「言わんこっちゃない」という言い回し自体は政治や日常の話題でも多用されており、株と無関係なポストがかなり混ざっています。このカテゴリは現状いちばん精度が低く、参考程度にご覧ください。</p>
+    </div>
+    <div class="card">
+      <h2>喧嘩指数</h2>
+      <div><span class="count">4</span> <span class="unit">件</span></div>
+      <div class="bar"><div style="width:2%"></div></div>
+      <p>株クラ同士の罵り合い・言い合い系ポスト（近似）。</p>
+      <p><strong>今日の傾向：</strong>「株クラは言い合いが多い」という自嘲的なポストや、他ジャンル界隈の喧嘩と比べるポストが中心で、深刻な罵り合いというより日常的なやり取りの範囲です。</p>
+    </div>
+    <div class="card">
+      <h2>他界隈からの批判指数</h2>
+      <div><span class="count">0</span> <span class="unit">件</span></div>
+      <div class="bar"><div style="width:0%"></div></div>
+      <p>界隈の外から株クラに向けられる批判ポスト。</p>
+      <p><strong>今日の傾向：</strong>直近では「インプレッション稼ぎがうざい」といった愚痴系のポストが中心で、「性格が悪い」「オカルト」といった強い批判は検出されませんでした。</p>
+    </div>
+  </div>
+
+  <section class="note">
+    <h2>数え方と注意</h2>
+    <ul>
+      <li>この指数は<strong>簡易サンプリング指数</strong>です。Xの全ポストを数えた実数ではなく、Yahoo!リアルタイム検索で公開検索できるポストをカテゴリ別キーワードで集計しています。流量が多いカテゴリの件数は推定値です。</li>
+      <li>総合指数は4カテゴリの合計を、記録開始日（2026年11月23日）＝100として換算したものです。日々の推移で「荒れてきたかどうか」を見るための温度計としてご利用ください。</li>
+      <li>各カテゴリの「今日の傾向」は、ヒットしたポストの内容を<strong>匿名化して要約</strong>したものです。原文の転載ではなく、アカウント名や原文へのリンクも掲載していません。</li>
+      <li>このページは市場観測のための参考情報であり、投資助言ではありません。</li>
+      <li>広告は掲載していません。アクセス解析やトラッキング目的のCookieも使用していません。</li>
+    </ul>
+  </section>
+
+  <footer>
+    株クラセンチメント指数（簡易版）／ データ：Yahoo!リアルタイム検索による公開ポストのサンプリング ／ 最終更新：2026年11月23日
+  </footer>
+</main>
+</body>
+</html>
